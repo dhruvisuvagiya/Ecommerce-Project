@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'assets1/vendors/feather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'assets1/vendors/mdi/css/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets1/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets1/vendors/typicons/typicons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets1/vendors/simple-line-icons/css/simple-line-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets1/vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'assets1/vendors/select2/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets1/vendors/select2-bootstrap-theme/select2-bootstrap.min.css' %}">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'assets1/css/vertical-layout-light/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'assets1/images/favicon.png' %}">
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+          <div class="me-3">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+            <span class="icon-menu"></span>
+            </button>
+          </div>
+        <div>
+        <a class="navbar-brand brand-logo" href="/admin/">
+        <img src="{% static 'assets1/images/logo.svg' %}" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="/admin/">
+        <img src="{% static 'assets1/images/logo-mini.svg' %}" alt="logo" />
+        </a>
+      </div>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-top">
+    <ul class="navbar-nav">
+      <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+        <h1 class="welcome-text">Slider</h1>
+      </li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <form class="search-form" action="#">
+          <i class="icon-search"></i>
+          <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+        </form>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+        <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="img-xs rounded-circle" src="{% static 'assets1/images/user.jpg' %}" alt="Profile image"></a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+          <div class="dropdown-header text-center">
+            <img class="img-sm rounded-circle" src="{% static 'assets1/images/user.jpg' %}" alt="Profile image">
+            <p class="fw-light text-muted mb-0 mt-3">User</p>
+            <p class="mb-0 font-weight-semibold">{{id}}</p>
+          </div>
+          <a href="/logout/" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/">
+        <i class="mdi mdi-grid-large menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#intro-slider" aria-expanded="false"
+        aria-controls="form-elements">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Intro Slider</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="intro-slider">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="/intro-slider/">New Intro Slider</a></li>
+          <li class="nav-item"><a class="nav-link" href="/data-intro-slider/">Existing Intro Slider</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#banner" aria-expanded="false">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Banner</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="banner">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/banner/">New Banner</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/data-banner/">Existing Banner</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#product" aria-expanded="false">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Product</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="product">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/product/">New Product</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/data-product/">Existing Product</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#deal" aria-expanded="false">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Deal</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="deal">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/deal/">New Deal</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/data-deal/">Existing Deal</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#top-selling" aria-expanded="false">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Top Selling</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="top-selling">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/top-selling/">New Top Selling</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/data-top-selling/">Existing Top Selling</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#blog" aria-expanded="false">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Blog</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="blog">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/blog/">New Blog</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/data-blog/">Existing Blog</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mt-2">Slider Form</h4>
+                  <form class="forms-sample">
+                    <div class="form-group row mt-4">
+                      <label for="title" class="col-sm-3 col-form-label text-center">Title : </label>
+                      <div class="col-sm-9 mt-2">
+                        <input type="text" class="form-control" id="title" placeholder="Title">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="description" class="col-sm-3 col-form-label text-center">Description : </label>
+                      <div class="col-sm-9 mt-2">
+                        <input type="text" class="form-control" id="description" placeholder="Description">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="button" class="col-sm-3 col-form-label text-center">Button Text : </label>
+                      <div class="col-sm-9 mt-2">
+                        <input type="text" class="form-control" id="button" placeholder="Button Text">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="image" class="col-sm-3 col-form-label text-center">Image : </label>
+                      <div class="col-sm-9 mt-2">
+                        <input type="file" class="form-control pt-2" id="image">
+                      </div>
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2 mt-4">Submit</button>
+                    <button class="btn btn-light mt-4">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+  <div class="d-sm-flex justify-content-center justify-content-sm-between">
+    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a
+        href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
+    <span class="float-none float-sm-end d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+  </div>
+</footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{% static 'assets1/vendors/js/vendor.bundle.base.js' %}"></script>
+  <script src="{% static 'assets1/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{% static 'assets1/vendors/typeahead.js/typeahead.bundle.min.js' %}"></script>
+  <script src="{% static 'assets1/vendors/select2/select2.min.js' %}"></script>
+  <script src="{% static 'assets1/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{% static 'assets1/js/off-canvas.js' %}"></script>
+  <script src="{% static 'assets1/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'assets1/js/template.js' %}"></script>
+  <script src="{% static 'assets1/js/settings.js' %}"></script>
+  <script src="{% static 'assets1/js/todolist.js' %}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{% static 'assets1/js/file-upload.js' %}"></script>
+  <script src="{% static 'assets1/js/typeahead.js' %}"></script>
+  <script src="{% static 'assets1/js/select2.js' %}"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
